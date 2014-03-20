@@ -120,8 +120,9 @@
     animation.values = values;
     animation.timingFunction = [CAMediaTimingFunction functionWithName: @"easeInEaseOut"];
     [view.contentView.layer addAnimation:animation forKey:nil];
-
-}
+    
+    
+   }
 
 - (void)dismissView:(UIView *)view
 {
@@ -177,11 +178,11 @@
 {
     self.layer.shadowPath    = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
     self.layer.shadowColor   = [UIColor blackColor].CGColor;
-    self.layer.shadowOpacity = 0.4f;
+    self.layer.shadowOpacity = 0.0f;
     self.layer.shadowOffset  = CGSizeMake(2.0f, 1.0f);
-    self.layer.shadowRadius  = 7.0f;
+    self.layer.shadowRadius  = 0.0f;
     self.layer.masksToBounds = NO;
-    self.layer.cornerRadius  = 5.0;
+    self.layer.cornerRadius  = 2.0;
     
     return self;
 }

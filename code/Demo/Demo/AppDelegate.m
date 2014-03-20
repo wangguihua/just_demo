@@ -8,6 +8,12 @@
 
 #import "AppDelegate.h"
 #import "UncaughtExceptionHandler.h"
+#import "MBCorePreprocessorMacros.h"
+#import "UIColorAdditions.h"
+#import "MBConstant.h"
+#import "MBGlobalUICommon.h"
+#import "UIImageView+AFNetworking.h"
+#import "UIImageAdditions.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -19,9 +25,34 @@
 #if __MB_DEBUG__
     InstallUncaughtExceptionHandler();
 #endif
-
+    self.tabBarController = [[MBTabBarController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = _tabBarController;
+    _tabBarController.delegate=self;
     [self.window makeKeyAndVisible];
-    
+    [self appGlobleSetting];
+    return YES;
+}
+-(void)appGlobleSetting
+{
+    //设置应用程序全局外观
+    self.window.backgroundColor = [UIColor blackColor];
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabBarBG.png"]];
+    self.window.tintColor = HEX(@"#5ec4fe");
+    if (IOS7_OR_LATER) {
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+        self.window.tintColor = HEX(@"#5ec4fe");
+        [[UINavigationBar appearance] setBarTintColor:HEX(@"#5ec4fe")];
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabBarBG.png"]];
+        [[UINavigationBar appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                NSFontAttributeName: kBigTitleFont}];
+    }
+
+}
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    if ([viewController isEqual:[tabBarController.viewControllers objectAtIndex:2]]) {
+        return NO;
+    } 
     return YES;
 }
 

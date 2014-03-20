@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#undef HEX
+#define HEX(__color) [UIColor colorWithHEX:(__color)]
+
 @interface UIColor (Additions)
 
 /**

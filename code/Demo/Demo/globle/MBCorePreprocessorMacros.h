@@ -9,13 +9,17 @@
 #import "MBLog.h"
 
 //--------------------------------------------------------------------------------------------------
-// Global compile
-#define __MB_UAT__                  (0)  //是否是UAT环境
-#define __MB_DEBUG__                (0)  //是否为debug模式
-#define __MB_LOG__                  (0)  //是否打开log
+// Global compile option P401
+#define __MB_UAT__                  (0)  //是否是UAT环
+#define __MB_DEBUG__                (1)  //是否为debug模式
+#define __MB_LOG__                  (1)  //是否打开log
 #define __MB_SAVE_LOG__             (0)  //是否将log保存到文件/Documents/log/
-#define __MB_ENABLE_THIRDPARTY__    (1)  //是否加载第三方程序
-#define __MB_PRODUCT__              (1)  //是否是生产环境，为1时需要将 __MB_DEBUG__ 置为0、__MB_ENABLE_THIRDPARTY__ 置为1
+#define __MB_ENABLE_THIRDPARTY__    (0)  //是否加载第三方程序
+#define __MB_PRODUCT__              (0)  //是否是生产环境，为1时需要将 __MB_DEBUG__ 置为0、__MB_ENABLE_THIRDPARTY__ 置为1
+
+#pragma mark - OS Version
+#undef  IOS7_OR_LATER
+#define IOS7_OR_LATER       ([[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending)
 
 #define MB_RELEASE_SAFELY(__POINTER) {  __POINTER = nil; }
 #define MB_INVALIDATE_TIMER(__TIMER) { [__TIMER invalidate]; __TIMER = nil; }
@@ -31,32 +35,32 @@
 //生成静态属性
 #undef MB_STATIC_PROPERTY
 #define MB_GET_PROPERTY( __name) \
-    @property (nonatomic, strong, readonly) NSString* __name; \
-    + (NSString *)__name;
+@property (nonatomic, strong, readonly) NSString* __name; \
++ (NSString *)__name;
 
 #undef MB_SET_PROPERTY
 #define MB_SET_PROPERTY( __name, __value) \
-    @dynamic __name; \
-    + (NSString *)__name \
-    { \
-        return __value; \
-    }
+@dynamic __name; \
++ (NSString *)__name \
+{ \
+return __value; \
+}
 
 
 //--------------------------------------------------------------------------------------------------
 //申明为单例
 #undef	MB_AS_SINGLETON
 #define MB_AS_SINGLETON( __class ) \
-    + (__class *)sharedInstance;
++ (__class *)sharedInstance;
 
 #undef	MB_DEF_SINGLETON
 #define MB_DEF_SINGLETON( __class ) \
-    + (__class *)sharedInstance \
-    { \
-        static dispatch_once_t once; \
-        static __class * __singleton__; \
-        dispatch_once( &once, ^{ __singleton__ = [[__class alloc] init]; } ); \
-        return __singleton__; \
++ (__class *)sharedInstance \
+{ \
+static dispatch_once_t once; \
+static __class * __singleton__; \
+dispatch_once( &once, ^{ __singleton__ = [[__class alloc] init]; } ); \
+return __singleton__; \
 }
 
 //--------------------------------------------------------------------------------------------------
