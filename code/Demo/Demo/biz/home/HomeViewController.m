@@ -25,24 +25,43 @@
     }
     return self;
 }
-
+-(void)backLogView
+{
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self makeViewAboutDownLoadView];
    self.view.backgroundColor= HEX(@"#5ec4fe");
+    UIImageView*imageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 12, 12, 20)];
+    imageView.image=[UIImage imageNamed:@"backView.png"];
+    
+    UILabel *lbl =[[UILabel alloc]initWithFrame:CGRectMake(22, 8, 60, 30)];
+    lbl.textColor=HEX(@"#ffffff");
+    lbl.text=@"Back";
+    
+    UIButton *btn =[UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame=CGRectMake(0, 0, 50, 44);
+    [btn addTarget:self action:@selector(backLogView) forControlEvents:UIControlEventTouchUpInside];
+    [btn addSubview:imageView];
+    [btn addSubview:lbl];
+    
+    UIBarButtonItem*leftBarItem=[[UIBarButtonItem alloc]initWithCustomView:btn];
+    
+    self.navigationItem.leftBarButtonItem=leftBarItem;
     UIBarButtonItem *rightBarItem =[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"phone.png"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemBtnPressed:)];
     self.navigationItem.rightBarButtonItem=rightBarItem;
     
     _headImageView =[[UIImageView alloc]initWithFrame:CGRectMake(110, 100, 100, 101)];
     _headImageView.image =[UIImage imageNamed:@"man.png"];
     [self.view addSubview:_headImageView];
-    _userName =[[UILabel alloc]initWithFrame:CGRectMake(0, _headImageView.frame.origin.y+95, 320, 40)];
+    _userName =[[UILabel alloc]initWithFrame:CGRectMake(0, _headImageView.frame.origin.y+100, 320, 40)];
     _userName.textAlignment=NSTextAlignmentCenter;
     _userName.font =[UIFont boldSystemFontOfSize:20];
     _userName.textColor=HEX(@"#ffffff");
-    _userName.text=@"汪桂华";
+    _userName.text=@"请先登录";
     [self.view addSubview:_userName];
 }
 -(void)rightBarItemBtnPressed:(UIBarButtonItem*)rightBtn

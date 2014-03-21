@@ -33,6 +33,7 @@
 		E78085A818DB3AE8009FC0CD /* phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E78085A718DB3AE8009FC0CD /* phone@2x.png */; };
 		E78085AA18DB3BAD009FC0CD /* man@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E78085A918DB3BAD009FC0CD /* man@2x.png */; };
 		E78085AC18DB3BBD009FC0CD /* woman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E78085AB18DB3BBD009FC0CD /* woman@2x.png */; };
+		E78085AE18DB45D6009FC0CD /* backView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E78085AD18DB45D6009FC0CD /* backView@2x.png */; };
 		E7C79AD6188F70FB00C1DFBD /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C79AB6188F70FA00C1DFBD /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E7C79AD7188F70FB00C1DFBD /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C79AB8188F70FA00C1DFBD /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E7C79AD8188F70FB00C1DFBD /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C79ABA188F70FA00C1DFBD /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -171,6 +172,7 @@
 		E78085A718DB3AE8009FC0CD /* phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone@2x.png"; sourceTree = "<group>"; };
 		E78085A918DB3BAD009FC0CD /* man@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man@2x.png"; sourceTree = "<group>"; };
 		E78085AB18DB3BBD009FC0CD /* woman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "woman@2x.png"; sourceTree = "<group>"; };
+		E78085AD18DB45D6009FC0CD /* backView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backView@2x.png"; sourceTree = "<group>"; };
 		E7C79AB5188F70FA00C1DFBD /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		E7C79AB6188F70FA00C1DFBD /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		E7C79AB7188F70FA00C1DFBD /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 		E7C79AB3188F705300C1DFBD /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E78085AD18DB45D6009FC0CD /* backView@2x.png */,
 				E78085A918DB3BAD009FC0CD /* man@2x.png */,
 				E78085AB18DB3BBD009FC0CD /* woman@2x.png */,
 				E78085A718DB3AE8009FC0CD /* phone@2x.png */,
@@ -912,6 +915,7 @@
 				E7D0935C18D9E34600A4993C /* tabBarItem1@2x.png in Resources */,
 				E7D0936018D9E34600A4993C /* tabBarItem4@2x.png in Resources */,
 				E780859718DB2741009FC0CD /* disease_icon@2x.png in Resources */,
+				E78085AE18DB45D6009FC0CD /* backView@2x.png in Resources */,
 				E7D0935418D9C53000A4993C /* tabBarMenu_hight@2x.png in Resources */,
 				E7124689188F69E90066C6BB /* InfoPlist.strings in Resources */,
 				E780859818DB2741009FC0CD /* information_normal@2x.png in Resources */,
